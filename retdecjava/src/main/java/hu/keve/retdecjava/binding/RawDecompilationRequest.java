@@ -51,11 +51,6 @@ public final class RawDecompilationRequest extends AbstractDecompilationRequest 
     }
 
     /**
-     * The decompilation mode.
-     */
-    private static final String MODE = "raw";
-
-    /**
      * The architecture.
      */
     private Architecture architecture;
@@ -77,6 +72,17 @@ public final class RawDecompilationRequest extends AbstractDecompilationRequest 
     private Long rawSectionVma;
 
     /**
+     * Construct a raw decompilation request. The mandatory parameters
+     * architecture and fileformat must be set later.
+     * 
+     * @param input
+     *            the input file.
+     */
+    public RawDecompilationRequest(final File input) {
+        super(DecompilationRequestMode.RAW, input);
+    }
+
+    /**
      * Construct a raw decompilation request.
      * 
      * @param input
@@ -92,7 +98,7 @@ public final class RawDecompilationRequest extends AbstractDecompilationRequest 
      */
     public RawDecompilationRequest(final File input, final Architecture architecture, final FileFormat fileFormat,
             final Long rawEntryPoint, final Long rawSectionVMA) {
-        super(MODE, input);
+        super(DecompilationRequestMode.RAW, input);
         this.architecture = architecture;
         this.fileFormat = fileFormat;
         this.rawEntryPoint = rawEntryPoint;

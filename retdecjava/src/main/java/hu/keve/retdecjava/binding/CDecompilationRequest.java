@@ -67,11 +67,6 @@ public final class CDecompilationRequest extends AbstractDecompilationRequest {
     }
 
     /**
-     * The decompilation mode.
-     */
-    private static final String MODE = "c";
-
-    /**
      * The architecture.
      */
     private Architecture architecture;
@@ -103,7 +98,7 @@ public final class CDecompilationRequest extends AbstractDecompilationRequest {
      *            the file to compile and decompile.
      */
     public CDecompilationRequest(final File input) {
-        super(MODE, input);
+        super(DecompilationRequestMode.C, input);
     }
 
     @Override

@@ -51,12 +51,7 @@ public final class BinDecompilationRequest extends AbstractDecompilationRequest 
             return super.toString().toLowerCase();
         };
     }
-
-    /**
-     * The decompilation mode.
-     */
-    private static final String MODE = "bin";
-
+    
     /**
      * The architecture.
      */
@@ -84,7 +79,7 @@ public final class BinDecompilationRequest extends AbstractDecompilationRequest 
      * @param input the input file.
      */
     public BinDecompilationRequest(final File input) {
-        super(MODE, input);
+        super(DecompilationRequestMode.BIN, input);
     }
 
     @Override

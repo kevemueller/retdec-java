@@ -114,6 +114,7 @@ public abstract class AbstractDecompilationRequest implements RetdecFormRequest 
         MIPS, /** pic32. */
         PIC32, /** ppc. */
         POWERPC;
+        
         @Override
         public String toString() {
             return super.toString().toLowerCase();
@@ -138,7 +139,7 @@ public abstract class AbstractDecompilationRequest implements RetdecFormRequest 
     /**
      * The decompilation mode.
      */
-    private final String mode;
+    private final DecompilationRequestMode mode;
     /**
      * The file to decompile.
      */
@@ -188,7 +189,7 @@ public abstract class AbstractDecompilationRequest implements RetdecFormRequest 
      * @param input
      *            the input file.
      */
-    public AbstractDecompilationRequest(final String mode, final File input) {
+    public AbstractDecompilationRequest(final DecompilationRequestMode mode, final File input) {
         this.mode = mode;
         this.input = input;
     }
@@ -216,7 +217,7 @@ public abstract class AbstractDecompilationRequest implements RetdecFormRequest 
         return map;
     }
 
-    public final String getMode() {
+    public final DecompilationRequestMode getMode() {
         return mode;
     }
 
